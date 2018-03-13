@@ -101,8 +101,6 @@ before execution of the next command, a wait+1 would takes 2/10 seconds, etc.
 
 *** Nested loops are not permissible and places the task in an error state
 
-See recipe_ideas.c for some example code.
-
 Status:
 
 Use the red and green LEDs as described below to indicate the status.
@@ -130,28 +128,37 @@ new line on the system console. See below for an example.
 
 User Command Details:
 Command Mnemonic Comments
-Pause Recipe execution P or p Not operative after recipe end or
-error
-Continue Recipe execution C or c Not operative after recipe end or
-error
-Move 1 position to the right if
-possible
+```
+P or p
+```
+Pause Recipe execution Not operative after recipe end or error
 
-R or r Not operative if recipe isn’t paused
-or at extreme right position
-Move 1 position to the left if
-possible
+```
+C or c
+```
+Continue Recipe execution Not operative after recipe end or error
 
-L or l Not operative if recipe isn’t paused
-or at extreme left position
-No-op no new override entered
-for selected servo
+Move 1 position to the right if possible
+
+```
+R or r
+```
+Not operative if recipe isn’t paused or at extreme right position Move 1 position to the left if possible
+
+```
+L or l 
+```
+Not operative if recipe isn’t paused or at extreme left position
+
+```
+No-op 
+```
+no new override entered for selected servo
 
 ```
 N or n
 ```
-Begin or Restart the recipe B or b Starts the recipe’s execution
-immediately
+Begin or Restart the recipe B or b Starts the recipe’s execution immediately
 
 Example override commands:
 
