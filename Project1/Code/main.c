@@ -1,6 +1,6 @@
 /**********************************************************************************************
 main function  
-  Version 12.1 		:	Final version with working Histogram program. 
+  Version 8.1 		:	Final version Histogram. 
   Author			:	Deepak Siddharth Parthipan
 **********************************************************************************************/
 #include <string.h>
