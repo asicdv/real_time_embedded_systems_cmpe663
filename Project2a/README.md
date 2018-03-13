@@ -1,4 +1,5 @@
 Project Overview:
+
 Design and implement a STM32 Discovery board program exhibiting multitasking
 characteristics in simultaneously controlling a pair of servo motors using a custom
 interpreted control language. The system will be responsive to simultaneous
@@ -8,6 +9,7 @@ Discovery board. Each servo will be controlled by its own recipe of commands in 
 custom interpreted control language.
 
 Servo and PWM Overview:
+
 The servos can be positioned to any of six positions (0, 1, 2, 3, 4, 5) approximately
 evenly spaced along the servos’ potential 160 degree arc. Position 0 is at the
 extreme clockwise position, and Position 5 is at the extreme counterclockwise
@@ -19,6 +21,7 @@ of positions. Pulse widths from 0.4 milliseconds to 2.0 milliseconds are a typic
 range.
 
 Connecting the Futaba Servo:
+
 These servos require 5 volts with sufficient current to move the motor. You need to
 use a 5 volt power supply to supply this current. Be sure to connect all grounds! The
 other connection is the PWM input line which you connect to your selected GPIO
@@ -28,12 +31,14 @@ adapter for the breadboard.
 NOTE – when using the black power supplies be sure to turn them off before leaving.
 
 Mandatory Demo of PWM Signal:
+
 Before you will be allowed to connect to a servo motor you MUST demonstrate that
 your code produces a valid PWM signal. You will demonstrate this using an
 oscilloscope. If you fail to do this step and burn out a servo motor you are responsible
 for its replacement cost.
 
 Command Language:
+
 As memory space on microcontrollers is often at a premium, each of the recipe
 commands are encoded into one byte. These recipes are typically implemented as an
 array of byte values.
@@ -41,6 +46,7 @@ A master timer generates interrupts every 100 milliseconds, serving as the time 
 the wait commands below.
 
 Command Format:
+
 command opcode command parameter
 3 bits wide 5 bits wide
 Recipe Commands:
@@ -82,6 +88,7 @@ before execution of the next command, a wait+1 would takes 2/10 seconds, etc.
 See recipe_ideas.c for some example code.
 
 Status:
+
 Use the red and green LEDs as described below to indicate the status.
 Display these status indications for just the first servo:
 • Recipe Running (only green on)
@@ -100,6 +107,7 @@ is cancelled and the “>” override prompt character is written on the beginni
 newline on the system console. See below for an example.
 
 User Command Details:
+
 Command Mnemonic Comments
 Pause Recipe execution P or p Not operative after recipe end or
 error
@@ -132,7 +140,9 @@ For safety, your program’s execution should begin with tasks in the paused sta
 startup sequence should include appropriate initialization of the task values.
 Include a robust pair of demo recipes (a different one for each servo to demonstrate
 multitasking.)
+
 The following test recipe snippets must be included in your demo:
+
 MOV+0 ; There must NOT be intervening instructions in this group to allow
 MOV+5 ; verification of default time delay.
 MOV+0
@@ -154,6 +164,7 @@ WAIT+31
 MOV+4
 
 Additional test recipes:
+
 • Include a recipe to verify the moves to all possible positions.
 • Include a recipe to end normally (i.e. with an “RECIPE_END” command, followed
 and by a MOV command to a position different from the previous MOV
