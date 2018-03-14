@@ -44,6 +44,3 @@ To monitor the performance of the business, metrics are gathered and reported at
 - The next break for a teller occurs from 30 to 60 minutes from when they started their previous break.
 - A break can only occur after the completion of the current customer transaction.
 - The break timing and duration is based on a random uniform distribution.
-
-This is a offline tool, your data stays locally and is not send to any server!
-Feedback & Bug Reports
