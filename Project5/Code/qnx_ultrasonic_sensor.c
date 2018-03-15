@@ -2,8 +2,6 @@
 
 Project5  
 Ultra-Sonic sensor -  	Final version with working ultra sonic sensor with updated comments
-						
-Contributions- Vedant Karia, Deepak Siddharth, Zeyar Win
 **************************************************************************************************************************************/
 
 #include <stdlib.h>
